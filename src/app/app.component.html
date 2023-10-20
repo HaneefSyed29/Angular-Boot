@@ -34,6 +34,39 @@
   <!-- pipes are used for data manipulation in any format like uppercase or may be anything  -->
   <!-- pipes are only used in HTML file only not TS or CSS  -->
   <h1>{{ today | date }}</h1>
-  <h1>{{ today | date: 'fullDate' }}</h1> <!-- using paramter we can also access -->
+  <h1>{{ today | date : "fullDate" }}</h1>
+  <!-- using paramter we can also access -->
+
+  <!-- Template Form  -->
+  <form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+    <input type="text" ngModel placeholder="Enter Name" name="name" />
+    <br /><br />
+    <input
+      type="password"
+      ngModel
+      placeholder="Enter Password"
+      name="password"
+    />
+    <br /><br />
+    <button>Login</button>
+  </form>
+
+  <!-- Reactive Form  -->
+  <form [formGroup]="signup" (ngSubmit)="formData()">
+    <input
+      type="text"
+      placeholder="Enter Password"
+      name="name"
+      formControlName="name"
+    />
+    <br /><br />
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="password"
+      formControlName="password"
+    />
+    <br /><br />
+    <button type="submit">Signup</button>
+  </form>
 </div>
-  
