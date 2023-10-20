@@ -24,7 +24,7 @@ export class AppComponent {
   userLogin(Item: any) {
     console.warn(Item);
   }
-  formData(){
+  formData() {
     console.warn(this.signup.value);
   }
 }
